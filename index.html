@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flower</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+  }
+
+  #content {
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .flower {
+    width: 100px;
+    height: 100px;
+    background: url('—Pngtree—rose cartoon flowers flowers bouquet_3971201.png') no-repeat center/contain;
+  }
+
+  .message {
+    color: #ff69b4;
+  }
+</style>
+</head>
+<body>
+
+<div id="content" onclick="toggleContent()"></div>
+
+<script>
+  let isFlower = true;
+
+  function toggleContent() {
+    const content = document.getElementById('content');
+
+    if (isFlower) {
+      content.innerHTML = '<div class="flower"></div>';
+      content.classList.remove('message');
+    } else {
+      content.innerHTML = 'คุณคือดอกไม้ที่สวยที่สุดในใจฉัน';
+      content.classList.add('message');
+    }
+    isFlower = !isFlower;
+  }
+
+  // เริ่มต้นด้วยดอกไม้
+  toggleContent();
+</script>
+
+</body>
+</html>
