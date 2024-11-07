@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>flower</title>
+<title>ดอกไม้เซอร์ไพรส์</title>
 <style>
   body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
     background-color: #f0f8ff;
@@ -20,35 +21,46 @@
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin-bottom: 10px;
   }
 
   .flower {
     width: 100px;
     height: 100px;
-    background: url('—Pngtree—rose cartoon flowers flowers bouquet_3971201.png') no-repeat center/contain;
+    background: url('flower.png') no-repeat center/contain;
   }
 
   .message {
     color: #ff69b4;
+  }
+
+  #extra-message {
+    font-size: 1.2rem;
+    color: #555;
+    display: none;
   }
 </style>
 </head>
 <body>
 
 <div id="content" onclick="toggleContent()"></div>
+<div id="extra-message">คิดถึงนะ อยากให้รู้ว่าคุณคือคนที่พิเศษที่สุดสำหรับฉัน ❤️</div>
 
 <script>
   let isFlower = true;
 
   function toggleContent() {
     const content = document.getElementById('content');
+    const extraMessage = document.getElementById('extra-message');
 
     if (isFlower) {
       content.innerHTML = '<div class="flower"></div>';
       content.classList.remove('message');
+      extraMessage.style.display = 'none';
     } else {
       content.innerHTML = 'คุณคือดอกไม้ที่สวยที่สุดในใจฉัน';
       content.classList.add('message');
+      extraMessage.style.display = 'block';
     }
     isFlower = !isFlower;
   }
